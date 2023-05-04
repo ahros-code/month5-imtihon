@@ -28,7 +28,7 @@
 
 @media only screen and (max-width: 662px) {
 	.image {
-		margin-right: 20px;
+		margin-right: 10px;
 	}
 
 	.icon {
@@ -39,6 +39,6 @@
 
 @media only screen and (max-width: 637px) {
 	.image {
-		margin-right: 20px;
+		margin-right: 10px;
 	}
 }

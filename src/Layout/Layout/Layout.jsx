@@ -10,11 +10,13 @@ const Layout = () => {
 				<div className={css.container}>
 					<Navbar />
 				</div>
-				<div className={css.outlet}>
-					<Outlet />
-				</div>
-				<div className={css.left}>
-					<Sidebar />
+				<div className={css.mainWrapper}>
+					<div className={css.left}>
+						<Sidebar />
+					</div>
+					<div className={css.outlet}>
+						<Outlet />
+					</div>
 				</div>
 			</div>
 		</>
