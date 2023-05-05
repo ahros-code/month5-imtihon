@@ -9,6 +9,7 @@ import Favourites from './pages/Favourites/Favourites';
 import Liked from './pages/Liked/Liked';
 import Music from './pages/Music/Music';
 import Games from './pages/Games/Games';
+import History from './pages/History/History'
 
 const App = () => {
  return (
@@ -18,6 +19,7 @@ const App = () => {
 			<Route path='/trending' element={<Trending />}/>
 			<Route path='/subscriptions' element={<Subscriptions />}/>
 			<Route path='/library' element={<Library />}/>
+			<Route path='/history' element={<History />}/>
 			<Route path='/watchlater' element={<Watchlater />}/>
 			<Route path='/favourites' element={<Favourites />}/>
 			<Route path='/liked' element={<Liked />}/>

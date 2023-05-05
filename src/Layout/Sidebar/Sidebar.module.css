@@ -1,0 +1,43 @@
+.firstPart > li > a {
+	font-size: 16px;
+	line-height: 20px;
+	color: #898989;
+}
+
+.firstPart > li {
+	display: flex;
+	gap: 15px;
+}
+
+.firstPart > li {
+	margin-bottom: 28px;
+}
+
+.firstPart > li > * {
+	font-size: 20px;
+	color: #898989;
+}
+
+.firstPart {
+	margin-bottom: 60px;
+}
+
+.secondPart > li > a {
+	font-size: 16px;
+	line-height: 20px;
+	color: #898989;
+}
+
+.secondPart > li {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 28px;
+}
+
+.secondPart > li > * {
+	color: #898989;
+}
+
+.wrapper {
+	width: 223px;
+}
