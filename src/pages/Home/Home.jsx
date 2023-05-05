@@ -13,7 +13,7 @@ const Home = () => {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '557bbcd067mshe2f496486812208p1a20a9jsn06d8ec5b7b5f',
+			'X-RapidAPI-Key': '9282378fe6mshf1ef0b35c55f161p1bc4dajsn47cebfd72cb4',
 			'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
 		},
 	};
@@ -23,7 +23,7 @@ const Home = () => {
 	const options2 = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '557bbcd067mshe2f496486812208p1a20a9jsn06d8ec5b7b5f',
+			'X-RapidAPI-Key': '9282378fe6mshf1ef0b35c55f161p1bc4dajsn47cebfd72cb4',
 			'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
 		},
 	};
@@ -53,14 +53,14 @@ const Home = () => {
 		getChannelVideos();
 	}, []);
 
-	console.log(data2);
+	console.log(data);
 
 	return (
 		<>
 			<div className={css.channelVideos}>
 				<Swiper slidesPerView={6} spaceBetween={30}>
 					{data2.map((vid, index) => (
-						<SwiperSlide>
+						<SwiperSlide key={index}>
 							<ChannelVideos
 								key={index}
 								title={vid.snippet.title}
@@ -74,7 +74,7 @@ const Home = () => {
 				<h2 className={css.recom}>Recommended</h2>
 				<Swiper slidesPerView={3} spaceBetween={30}>
 					{data.map((vid, index) => (
-						<SwiperSlide>
+						<SwiperSlide key={index}>
 							<VideoCard
 								key={index}
 								title={vid.snippet.title}
