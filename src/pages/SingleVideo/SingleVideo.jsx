@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { IoIosShareAlt } from 'react-icons/Io';
+
 import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai';
 import { FiMoreHorizontal } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
@@ -71,7 +71,6 @@ const SingleVideo = () => {
 									<span>0</span>
 								</div>
 								<div className={css.share}>
-									<IoIosShareAlt />
 									<span>Share</span>
 								</div>
 								<div className={css.more}>
