@@ -108,14 +108,46 @@
 }
 
 .desc {
+	max-width: 820px;
 	margin-top: 14px;
 	margin-bottom: 15px;
 	font-size: 14px;
 	line-height: 22px;
-	/* or 138% */
-
 	color: #000000;
-
 	mix-blend-mode: normal;
 	opacity: 0.6;
+	max-height: 88px;
+}
+
+.chRight > h4 {
+	margin-bottom: 4px;
+}
+
+.subsBtn {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	color: #ffffff;
+	background: #ff0000;
+	border-radius: 20px;
+	width: 154px;
+	height: 40px;
+	border: none;
+}
+
+.channelWrapper {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1000px;
+}
+
+main {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nextLeft {
+	width: 300px;
+	margin-top: 30px;
 }
