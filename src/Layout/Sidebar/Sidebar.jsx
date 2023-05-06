@@ -16,47 +16,137 @@ const Sidebar = () => {
 	return (
 		<div className={css.wrapper}>
 			<ul className={css.firstPart}>
-				<li className=''>
+				<li className={css.li}>
 					<AiOutlineHome />
-					<NavLink to={'/'}>Home</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/'}
+					>
+						Home
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<AiOutlineFire />
-					<NavLink to={'/trending'}>Trending</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/trending'}
+					>
+						Trending
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<BsFolder2Open />
-					<NavLink to={'/subscriptions'}>Subscriptions</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/subscriptions'}
+					>
+						Subscriptions
+					</NavLink>
 				</li>
 			</ul>
 			<ul className={css.secondPart}>
-				<li>
+				<li className={css.li}>
 					<AiOutlineFolder />
-					<NavLink to={'/library'}>Library</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/library'}
+					>
+						Library
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<RiFilePaper2Line />
-					<NavLink to={'/history'}>History</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/history'}
+					>
+						History
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<BsAlarm />
-					<NavLink to={'/watchlater'}>Watchlater</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/watchlater'}
+					>
+						Watchlater
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<AiOutlineStar />
-					<NavLink to={'/favourites'}>Favourites</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/favourites'}
+					>
+						Favourites
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<AiOutlineHeart />
-					<NavLink to={'/liked'}>Liked</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/liked'}
+					>
+						Liked
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<CiMusicNote1 />
-					<NavLink to={'/music'}>Music</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/music'}
+					>
+						Music
+					</NavLink>
 				</li>
-				<li>
+				<li className={css.li}>
 					<GrGamepad />
-					<NavLink to={'/games'}>Games</NavLink>
+					<NavLink
+						style={({ isActive }) => {
+							return {
+								color: isActive ? 'red' : '',
+							};
+						}}
+						to={'/games'}
+					>
+						Games
+					</NavLink>
 				</li>
 			</ul>
 		</div>

@@ -65,6 +65,7 @@ const Home = () => {
 								key={index}
 								title={vid.snippet.title}
 								img={vid.snippet.thumbnails.high.url}
+								id={vid.id.videoId}
 							/>
 						</SwiperSlide>
 					))}
