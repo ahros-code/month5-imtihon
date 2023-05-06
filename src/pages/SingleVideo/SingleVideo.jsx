@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { IoIosShareAlt } from 'react-icons/Io';
+import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai';
+import { FiMoreHorizontal } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../Layout/Navbar/Navbar';
 import css from './SingleVideo.module.css';
@@ -27,15 +30,15 @@ const SingleVideo = () => {
 		}
 	}
 
-	// useEffect(() => {
-	// 	getSingleVideoData();
-	// }, []);
+	useEffect(() => {
+		getSingleVideoData();
+	}, []);
 
-	let url = `https://www.youtube.com/embed/${id}`;
+	let url = `https://www.youtube.com/embed/${id}?autoplay=1`;
 
 	return (
 		<div className={css.container}>
-			<nav>
+			<nav className={css.nav}>
 				<Navbar />
 			</nav>
 
@@ -47,7 +50,58 @@ const SingleVideo = () => {
 					frameborder='0'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					allowFullScreen
+					className={css.video}
 				></iframe>
+				{singleVideoData.map((video, index) => (
+					<div className={css.wrapper} key={index}>
+						<h3 className={css.vidTitle}>{video.snippet.title}</h3>
+						<div className={css.statsWrapper}>
+							<div className={css.views}>
+								<p className={css.vidViews}>
+									{video.statistics.viewCount} views
+								</p>
+							</div>
+							<div className={css.right}>
+								<div className={css.like}>
+									<AiOutlineLike />
+									<span>{video.statistics.likeCount}</span>
+								</div>
+								<div className={css.disLike}>
+									<AiOutlineDislike />
+									<span>0</span>
+								</div>
+								<div className={css.share}>
+									<IoIosShareAlt />
+									<span>Share</span>
+								</div>
+								<div className={css.more}>
+									<FiMoreHorizontal />
+								</div>
+							</div>
+						</div>
+						<div className={css.channelWrapper}>
+							<div className={css.channelLeft}>
+								<div className={css.chLeft}>
+									<img
+										src={
+											'https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg'
+										}
+										alt='cat img'
+										className={css.channelNameImg}
+									/>
+								</div>
+								<div className={css.chRight}>
+									<h4>{video.snippet.channelTitle}</h4>
+									<span className={css.publishedOn}>
+										Published on {video.snippet.publishedAt}
+									</span>
+									<p className={css.desc}>{video.snippet.description}</p>
+								</div>
+							</div>
+							<div className={css.channelRight}></div>
+						</div>
+					</div>
+				))}
 			</main>
 		</div>
 	);

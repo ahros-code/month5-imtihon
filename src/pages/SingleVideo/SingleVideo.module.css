@@ -7,4 +7,115 @@
 
 .video {
 	margin-top: 30px;
+	border-radius: 14px;
+}
+
+.vidTitle {
+	font-size: 24px;
+	line-height: 45px;
+	color: #192646;
+}
+
+.vidViews {
+	font-size: 16px;
+	line-height: 25px;
+	/* identical to box height */
+
+	color: #c2c2c2;
+}
+
+.statsWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1000px;
+	margin-top: 14px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ebebeb;
+	margin-bottom: 38px;
+}
+
+.like {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.like > * {
+	color: #c2c2c2;
+}
+.like > span {
+	color: #192646;
+	font-size: 15px;
+}
+
+.right {
+	display: flex;
+	gap: 25px;
+	align-items: center;
+}
+
+.disLike {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.disLike > * {
+	color: #c2c2c2;
+}
+.disLike > span {
+	color: #192646;
+	font-size: 15px;
+}
+
+.share {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.share > * {
+	color: #c2c2c2;
+}
+.share > span {
+	color: #192646;
+	font-size: 15px;
+}
+
+.nav {
+	margin-top: 20px;
+}
+
+.channelNameImg {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.channelLeft {
+	display: flex;
+	gap: 12px;
+}
+
+.chRight {
+	max-width: 900px;
+}
+
+.publishedOn {
+	color: #c2c2c2;
+}
+
+.desc {
+	margin-top: 14px;
+	margin-bottom: 15px;
+	font-size: 14px;
+	line-height: 22px;
+	/* or 138% */
+
+	color: #000000;
+
+	mix-blend-mode: normal;
+	opacity: 0.6;
 }
