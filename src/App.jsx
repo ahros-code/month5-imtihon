@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import Library from './pages/Library/Library';
 import Liked from './pages/Liked/Liked';
 import Music from './pages/Music/Music';
+import SearchedVideos from './pages/SearchedVideos/SearchedVideos';
 import SingleVideo from './pages/SingleVideo/SingleVideo';
 import Subscriptions from './pages/Subscriptions/Subscriptions';
 import Trending from './pages/Trending/Trending';
@@ -26,6 +27,7 @@ const App = () => {
 				<Route path='/liked' element={<Liked />} />
 				<Route path='/music' element={<Music />} />
 				<Route path='/games' element={<Games />} />
+				<Route path='/search/:search' element={<SearchedVideos />} />
 			</Route>
 			<Route path='videos/:id' element={<SingleVideo />} />
 		</Routes>

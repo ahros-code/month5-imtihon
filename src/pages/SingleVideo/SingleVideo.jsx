@@ -10,7 +10,6 @@ const SingleVideo = () => {
 	let { id } = useParams();
 	const [singleVideoData, setSingleVideoData] = useState([]);
 	const [showMore, setShowMore] = useState(false);
-
 	let VideoUrl = `https://youtube-v31.p.rapidapi.com/videos?part=contentDetails%2Csnippet%2Cstatistics&id=${id}`;
 	const VideoOptions = {
 		method: 'GET',

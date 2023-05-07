@@ -53,7 +53,16 @@ const Home = () => {
 		getChannelVideos();
 	}, []);
 
-	console.log(data);
+	const myData = data.map((vid, index) => (
+		<SwiperSlide key={index}>
+			<VideoCard
+				key={index}
+				title={vid.snippet.title}
+				img={vid.snippet.thumbnails.high.url}
+				id={vid.id.videoId}
+			/>
+		</SwiperSlide>
+	));
 
 	return (
 		<>
@@ -74,16 +83,7 @@ const Home = () => {
 			<div className={css.recommend}>
 				<h2 className={css.recom}>Recommended</h2>
 				<Swiper slidesPerView={3} spaceBetween={30}>
-					{data.map((vid, index) => (
-						<SwiperSlide key={index}>
-							<VideoCard
-								key={index}
-								title={vid.snippet.title}
-								img={vid.snippet.thumbnails.high.url}
-								id={vid.id.videoId}
-							/>
-						</SwiperSlide>
-					))}
+					{myData}
 				</Swiper>
 			</div>
 		</>
