@@ -32,7 +32,7 @@ const SingleVideo = () => {
 
 	useEffect(() => {
 		getSingleVideoData();
-	}, []);
+	}, [id]);
 
 	let url = `https://www.youtube.com/embed/${id}?autoplay=1`;
 
