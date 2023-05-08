@@ -36,6 +36,10 @@ const SingleVideo = () => {
 
 	let url = `https://www.youtube.com/embed/${id}?autoplay=1`;
 
+	function update() {
+		window.location.reload();
+	}
+
 	return (
 		<div className={css.container}>
 			<nav className={css.nav}>
@@ -54,7 +58,7 @@ const SingleVideo = () => {
 						className={css.video}
 					></iframe>
 					{singleVideoData.map((video, index) => (
-						<div className={css.wrapper}>
+						<div className={css.wrapper} key={index}>
 							<h3 className={css.vidTitle}>{video.snippet.title}</h3>
 							<div className={css.statsWrapper}>
 								<div className={css.views}>
@@ -121,7 +125,7 @@ const SingleVideo = () => {
 					))}
 				</div>
 				<div className={css.rightt}>
-					<div className={css.nextLeft}>
+					<div className={css.nextLeft} onClick={update}>
 						<Next />
 					</div>
 				</div>
