@@ -36,9 +36,9 @@ const SingleVideo = () => {
 
 	let url = `https://www.youtube.com/embed/${id}?autoplay=1`;
 
-	function update() {
-		window.location.reload();
-	}
+	// function update() {
+	// 	window.location.reload();
+	// }
 
 	return (
 		<div className={css.container}>
@@ -125,7 +125,7 @@ const SingleVideo = () => {
 					))}
 				</div>
 				<div className={css.rightt}>
-					<div className={css.nextLeft} onClick={update}>
+					<div className={css.nextLeft}>
 						<Next />
 					</div>
 				</div>
