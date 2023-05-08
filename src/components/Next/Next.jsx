@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import css from './Next.module.css';
+import useFetch from '../../hooks/useFetch'
 
-const Next = props => {
-	const [nextData, setNextData] = useState([]);
+const Next = () => {
 	const NextUrl =
 		'https://youtube-v31.p.rapidapi.com/search?channelId=UCBVjMGOIkavEAhyqpxJ73Dw&part=snippet%2Cid&order=date&maxResults=50';
 	const NextOption = {
@@ -14,19 +14,7 @@ const Next = props => {
 		},
 	};
 
-	const getNextData = async () => {
-		try {
-			const response = await fetch(NextUrl, NextOption);
-			const result = await response.json();
-			setNextData(result.items);
-		} catch (error) {
-			console.error(error);
-		}
-	};
-
-	useEffect(() => {
-		getNextData();
-	}, []);
+	const {data: nextData} = useFetch(NextUrl, NextOption)
 
 	return (
 		<div className={css.wrapper}>

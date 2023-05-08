@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ChannelVideos from '../../components/ChannelVideos/ChannelVideos';
 import VideoCard from '../../components/VideoCard/VideoCard';
 import css from './Home.module.css';
+import useFetch from '../../hooks/useFetch';
+import { useContext } from 'react'
+import { SearchContext } from '../../context/SearchContext'
 
 const Home = () => {
-	const [data, setData] = useState([]);
-	const [data2, setData2] = useState([]);
 	const url =
 		'https://youtube-v31.p.rapidapi.com/search?relatedToVideoId=7ghhRHRP6t4&part=id%2Csnippet&type=video&maxResults=50';
 	const options = {
@@ -28,32 +28,20 @@ const Home = () => {
 		},
 	};
 
-	async function getChannelVideos() {
-		try {
-			const response = await fetch(url2, options2);
-			const result = await response.json();
-			setData2(result.items);
-		} catch (error) {
-			console.error(error);
+	const {data: data} = useFetch(url, options)
+	const {data: datas} = useFetch(url2, options2)
+
+	const {searchData} = useContext(SearchContext)
+
+	const myData = data.filter((video)=>{
+		if(!searchData.trim()) {
+			return video;
+		} else if (
+			video.snippet.title.toLowerCase().includes(searchData.toLowerCase())
+		) {
+			return video;
 		}
-	}
-
-	async function getData() {
-		try {
-			const response = await fetch(url, options);
-			const result = await response.json();
-			setData(result.items);
-		} catch (error) {
-			console.error(error);
-		}
-	}
-
-	useEffect(() => {
-		getData();
-		getChannelVideos();
-	}, []);
-
-	const myData = data.map((vid, index) => (
+	}).map((vid, index) => (
 		<SwiperSlide key={index}>
 			<VideoCard
 				key={index}
@@ -68,7 +56,7 @@ const Home = () => {
 		<>
 			<div className={css.channelVideos}>
 				<Swiper slidesPerView={6} spaceBetween={30}>
-					{data2.map((vid, index) => (
+					{datas.map((vid, index) => (
 						<SwiperSlide key={index}>
 							<ChannelVideos
 								key={index}

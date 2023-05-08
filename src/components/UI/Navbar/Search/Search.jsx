@@ -1,15 +1,12 @@
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import search from '../../../../assets/images/search.svg';
 import { SearchContext } from '../../../../context/SearchContext';
 import css from './Search.module.css';
 
 const Search = () => {
 	const { searchData, setSearchData } = useContext(SearchContext);
-	const navigatt = useNavigate();
 	const submitHandler = e => {
 		e.preventDefault();
-		navigatt(`search/${searchData}`);
 	};
 	return (
 		<>

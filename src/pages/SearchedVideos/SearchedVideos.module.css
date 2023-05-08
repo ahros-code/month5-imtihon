@@ -1,8 +1,0 @@
-.wrapper {
-	max-height: 100vh;
-	overflow: scroll;
-}
-
-.wrapper::-webkit-scrollbar {
-	display: none;
-}
