@@ -69,7 +69,7 @@ const Home = () => {
 							slidesPerView: 5,
 						},
 
-						400: {
+						500: {
 							slidesPerView: 4,
 						},
 						100: {
