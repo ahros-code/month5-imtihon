@@ -27,3 +27,9 @@
 	overflow: hidden;
 	height: 100vh;
 }
+
+@media only screen and (max-width: 1000px) {
+	.left {
+		display: none;
+	}
+}

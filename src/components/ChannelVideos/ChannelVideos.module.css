@@ -32,3 +32,32 @@
 		line-height: 18px;
 	}
 }
+
+@media only screen and (max-width: 985px) {
+	.img {
+		width: 150px;
+		height: 95px;
+	}
+
+	.title {
+		font-size: 13px;
+		line-height: 18px;
+	}
+}
+
+@media only screen and (max-width: 474px) {
+	.img {
+		width: 120px;
+		height: 85px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.wrapper {
+		padding-right: 25px;
+	}
+	.img {
+		width: 100%;
+		height: 150px;
+	}
+}

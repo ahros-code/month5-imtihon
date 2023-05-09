@@ -21,3 +21,9 @@
 .wrapText > h3 {
 	color: #000;
 }
+
+@media only screen and (max-width: 985px) {
+	.wrapper{ 
+		width: 400px;
+	}
+}

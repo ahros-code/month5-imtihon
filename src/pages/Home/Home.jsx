@@ -4,9 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import ChannelVideos from '../../components/ChannelVideos/ChannelVideos';
 import VideoCard from '../../components/VideoCard/VideoCard';
 import { SearchContext } from '../../context/SearchContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import useFetch from '../../hooks/useFetch';
+import './Home.css';
 import css from './Home.module.css';
-import { ThemeContext } from '../../context/ThemeContext'
 
 const Home = () => {
 	const url =
@@ -34,7 +35,7 @@ const Home = () => {
 
 	const { searchData } = useContext(SearchContext);
 
-	const {theme} = useContext(ThemeContext)
+	const { theme } = useContext(ThemeContext);
 
 	const myData = data
 		.filter(video => {
@@ -60,7 +61,23 @@ const Home = () => {
 	return (
 		<div>
 			<div className={css.channelVideos}>
-				<Swiper slidesPerView={5} spaceBetween={15}>
+				<Swiper
+					slidesPerView={5}
+					spaceBetween={15}
+					breakpoints={{
+						787: {
+							slidesPerView: 5,
+						},
+
+						400: {
+							slidesPerView: 4,
+						},
+						100: {
+							direction: 'vertical',
+							height: 1000
+						},
+					}}
+				>
 					{datas.map((vid, index) => (
 						<SwiperSlide key={index}>
 							<ChannelVideos
@@ -74,8 +91,23 @@ const Home = () => {
 				</Swiper>
 			</div>
 			<div className={css.recommend}>
-				<h2 className={theme == 'light' ? css.recom : css.lightRecom}>Recommended</h2>
-				<Swiper slidesPerView={3} spaceBetween={20} className={css.slider}>
+				<h2 className={theme == 'light' ? css.recom : css.lightRecom}>
+					Recommended
+				</h2>
+				<Swiper
+					slidesPerView={3}
+					spaceBetween={20}
+					className={css.slider}
+					breakpoints={{
+						400: {
+							slidesPerView: 2,
+						},
+						100: {
+							direction: 'vertical',
+							height: 600,
+						},
+					}}
+				>
 					{myData}
 				</Swiper>
 			</div>
