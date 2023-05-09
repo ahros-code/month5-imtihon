@@ -49,7 +49,7 @@ const Login = () => {
 					className={css.inp}
 					value={email}
 					onChange={e => setEmail(e.target.value)}
-					placeholder='eve.holt@reqres.in/api/login'
+					placeholder='eve.holt@reqres.in'
 				/>
 				<input
 					type='password'
