@@ -11,6 +11,7 @@ import { GrGamepad } from 'react-icons/gr';
 import { RiFilePaper2Line } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
 import css from './Sidebar.module.css';
+import Button from '../../components/UI/Sidebar/Button/Button'
 
 const Sidebar = () => {
 	return (
@@ -149,6 +150,7 @@ const Sidebar = () => {
 					</NavLink>
 				</li>
 			</ul>
+			<Button />
 		</div>
 	);
 };

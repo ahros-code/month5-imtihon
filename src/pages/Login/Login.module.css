@@ -1,0 +1,43 @@
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper {
+	max-width: 450px;
+	margin: 0 auto;
+	margin-top: 150px;
+}
+
+.inp {
+	height: 70px;
+	margin-bottom: 25px;
+	border-radius: 5px;
+	border:1px solid #CCCCCC;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.inp:focus {
+	outline: 1px solid #ff0000;
+}
+
+.inp::placeholder {
+	font-size: 14px;
+	font-weight: 400;
+	opacity: 0.8;
+}
+
+.btn {
+	height: 60px;
+	background-color: #ff0000;
+	border: none;
+	font-size: 18px;
+	color: #fff;
+	border-radius: 76px;
+}
+
+.logo {
+	width: 200px;
+	margin-bottom: 22px;
+}

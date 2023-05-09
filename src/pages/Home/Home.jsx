@@ -1,11 +1,11 @@
+import { useContext } from 'react';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ChannelVideos from '../../components/ChannelVideos/ChannelVideos';
 import VideoCard from '../../components/VideoCard/VideoCard';
-import css from './Home.module.css';
+import { SearchContext } from '../../context/SearchContext';
 import useFetch from '../../hooks/useFetch';
-import { useContext } from 'react'
-import { SearchContext } from '../../context/SearchContext'
+import css from './Home.module.css';
 
 const Home = () => {
 	const url =
@@ -28,34 +28,36 @@ const Home = () => {
 		},
 	};
 
-	const {data: data} = useFetch(url, options)
-	const {data: datas} = useFetch(url2, options2)
+	const { data: data } = useFetch(url, options);
+	const { data: datas } = useFetch(url2, options2);
 
-	const {searchData} = useContext(SearchContext)
+	const { searchData } = useContext(SearchContext);
 
-	const myData = data.filter((video)=>{
-		if(!searchData.trim()) {
-			return video;
-		} else if (
-			video.snippet.title.toLowerCase().includes(searchData.toLowerCase())
-		) {
-			return video;
-		}
-	}).map((vid, index) => (
-		<SwiperSlide key={index}>
-			<VideoCard
-				key={index}
-				title={vid.snippet.title}
-				img={vid.snippet.thumbnails.high.url}
-				id={vid.id.videoId}
-			/>
-		</SwiperSlide>
-	));
+	const myData = data
+		.filter(video => {
+			if (!searchData.trim()) {
+				return video;
+			} else if (
+				video.snippet.title.toLowerCase().includes(searchData.toLowerCase())
+			) {
+				return video;
+			}
+		})
+		.map((vid, index) => (
+			<SwiperSlide key={index}>
+				<VideoCard
+					key={index}
+					title={vid.snippet.title}
+					img={vid.snippet.thumbnails.high.url}
+					id={vid.id.videoId}
+				/>
+			</SwiperSlide>
+		));
 
 	return (
 		<>
 			<div className={css.channelVideos}>
-				<Swiper slidesPerView={6} spaceBetween={30}>
+				<Swiper slidesPerView={5} spaceBetween={15}>
 					{datas.map((vid, index) => (
 						<SwiperSlide key={index}>
 							<ChannelVideos
@@ -70,7 +72,7 @@ const Home = () => {
 			</div>
 			<div className={css.recommend}>
 				<h2 className={css.recom}>Recommended</h2>
-				<Swiper slidesPerView={3} spaceBetween={30}>
+				<Swiper slidesPerView={3} spaceBetween={20} className={css.slider}>
 					{myData}
 				</Swiper>
 			</div>
