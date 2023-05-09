@@ -1,3 +1,4 @@
+import DarkModeToggle from 'react-dark-mode-toggle';
 import {
 	AiOutlineFire,
 	AiOutlineFolder,
@@ -10,13 +11,24 @@ import { CiMusicNote1 } from 'react-icons/ci';
 import { GrGamepad } from 'react-icons/gr';
 import { RiFilePaper2Line } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
+import Button from '../../components/UI/Sidebar/Button/Button';
 import css from './Sidebar.module.css';
-import Button from '../../components/UI/Sidebar/Button/Button'
+import { useContext } from 'react'
+import { ThemeContext } from '../../context/ThemeContext'
 
 const Sidebar = () => {
+	const {theme, toggleTheme} = useContext(ThemeContext)
 	return (
 		<div className={css.wrapper}>
 			<ul className={css.firstPart}>
+				<li className={css.li}>
+					<DarkModeToggle
+						onChange={toggleTheme}
+						checked={theme == 'light' ? false : true}
+						size={80}
+						speed={2.5}
+					/>
+				</li>
 				<li className={css.li}>
 					<AiOutlineHome />
 					<NavLink

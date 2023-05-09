@@ -5,12 +5,15 @@ import App from './App.jsx';
 import './assets/styles/globals.css';
 import { AuthContextProvider } from './context/AuthContext.jsx';
 import { SearchContextProvider } from './context/SearchContext.jsx';
+import { ThemeContextProvider } from './context/ThemeContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<BrowserRouter>
 		<AuthContextProvider>
 			<SearchContextProvider>
-				<App />
+				<ThemeContextProvider>
+					<App />
+				</ThemeContextProvider>
 			</SearchContextProvider>
 		</AuthContextProvider>
 	</BrowserRouter>

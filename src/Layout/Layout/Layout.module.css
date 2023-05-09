@@ -19,4 +19,11 @@
 	display: flex;
 	justify-content: space-between;
 	margin-left: 31px;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.wrapper {
+	overflow: hidden;
+	height: 100vh;
 }

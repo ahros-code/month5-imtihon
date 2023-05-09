@@ -11,6 +11,12 @@
 	color: #19202c;
 }
 
+.lightTitle {
+	font-size: 16px;
+	line-height: 20px;
+	color: #fff;
+}
+
 .wrapper {
 	max-width: 250px;
 }

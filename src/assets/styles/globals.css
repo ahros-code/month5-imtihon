@@ -47,3 +47,11 @@ button {
 body {
 	font-family: 'Mulish', sans-serif;
 }
+
+.light {
+	background-color: #fff;
+}
+
+.dark {
+	background-color: #17171E;
+}

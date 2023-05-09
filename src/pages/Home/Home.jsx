@@ -6,6 +6,7 @@ import VideoCard from '../../components/VideoCard/VideoCard';
 import { SearchContext } from '../../context/SearchContext';
 import useFetch from '../../hooks/useFetch';
 import css from './Home.module.css';
+import { ThemeContext } from '../../context/ThemeContext'
 
 const Home = () => {
 	const url =
@@ -13,7 +14,7 @@ const Home = () => {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '9282378fe6mshf1ef0b35c55f161p1bc4dajsn47cebfd72cb4',
+			'X-RapidAPI-Key': '557bbcd067mshe2f496486812208p1a20a9jsn06d8ec5b7b5f',
 			'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
 		},
 	};
@@ -23,7 +24,7 @@ const Home = () => {
 	const options2 = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '9282378fe6mshf1ef0b35c55f161p1bc4dajsn47cebfd72cb4',
+			'X-RapidAPI-Key': '557bbcd067mshe2f496486812208p1a20a9jsn06d8ec5b7b5f',
 			'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
 		},
 	};
@@ -32,6 +33,8 @@ const Home = () => {
 	const { data: datas } = useFetch(url2, options2);
 
 	const { searchData } = useContext(SearchContext);
+
+	const {theme} = useContext(ThemeContext)
 
 	const myData = data
 		.filter(video => {
@@ -55,7 +58,7 @@ const Home = () => {
 		));
 
 	return (
-		<>
+		<div>
 			<div className={css.channelVideos}>
 				<Swiper slidesPerView={5} spaceBetween={15}>
 					{datas.map((vid, index) => (
@@ -71,12 +74,12 @@ const Home = () => {
 				</Swiper>
 			</div>
 			<div className={css.recommend}>
-				<h2 className={css.recom}>Recommended</h2>
+				<h2 className={theme == 'light' ? css.recom : css.lightRecom}>Recommended</h2>
 				<Swiper slidesPerView={3} spaceBetween={20} className={css.slider}>
 					{myData}
 				</Swiper>
 			</div>
-		</>
+		</div>
 	);
 };
 

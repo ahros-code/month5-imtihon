@@ -1,13 +1,15 @@
 import { useContext, useState } from 'react';
-import css from './Login.module.css';
+import logo from '../../assets/images/Black.svg';
+import logoLight from '../../assets/images/Light.svg';
 import { AuthContext } from '../../context/AuthContext';
-import logo from '../../assets/images/Black.svg'
+import { ThemeContext } from '../../context/ThemeContext';
+import css from './Login.module.css';
 
 const Login = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const {setToken} = useContext(AuthContext)
+	const { setToken } = useContext(AuthContext);
 	const handleSubmit = e => {
 		e.preventDefault();
 
@@ -31,7 +33,7 @@ const Login = () => {
 				console.log(data);
 				if (data.token) {
 					setToken(data.token);
-					localStorage.setItem('token', data.token)
+					localStorage.setItem('token', data.token);
 				}
 			})
 			.catch(err => {
@@ -39,28 +41,40 @@ const Login = () => {
 			});
 	};
 
+	const { theme } = useContext(ThemeContext);
+
 	return (
-		<div className={css.wrapper}>
-			<img src={logo} alt="logo" className={css.logo} />
-			<form onSubmit={handleSubmit} className={css.form}>
-				<input
-					type='email'
-					name='email'
-					className={css.inp}
-					value={email}
-					onChange={e => setEmail(e.target.value)}
-					placeholder='eve.holt@reqres.in'
-				/>
-				<input
-					type='password'
-					name='password'
-					className={css.inp}
-					value={password}
-					onChange={e => setPassword(e.target.value)}
-					placeholder='cityslicka'
-				/>
-				<button type='submit' className={css.btn}>Log In</button>
-			</form>
+		<div className={css.mainWrapper}>
+			<div className={css.wrapper}>
+				<div className={css.container}>
+					<img
+						src={theme == 'light' ? logo : logoLight}
+						alt='logo'
+						className={css.logo}
+					/>
+					<form onSubmit={handleSubmit} className={css.form}>
+						<input
+							type='email'
+							name='email'
+							className={css.inp}
+							value={email}
+							onChange={e => setEmail(e.target.value)}
+							placeholder='eve.holt@reqres.in'
+						/>
+						<input
+							type='password'
+							name='password'
+							className={css.inp}
+							value={password}
+							onChange={e => setPassword(e.target.value)}
+							placeholder='cityslicka'
+						/>
+						<button type='submit' className={css.btn}>
+							Log In
+						</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	);
 };
