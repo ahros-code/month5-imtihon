@@ -96,15 +96,15 @@ const Home = () => {
 				</h2>
 				<Swiper
 					slidesPerView={3}
-					spaceBetween={20}
+					spaceBetween={10}
 					className={css.slider}
 					breakpoints={{
 						400: {
-							slidesPerView: 2,
+							slidesPerView: 3,
 						},
 						100: {
 							direction: 'vertical',
-							height: 600,
+							height: 1000
 						},
 					}}
 				>

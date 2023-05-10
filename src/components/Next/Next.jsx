@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import css from './Next.module.css';
 import useFetch from '../../hooks/useFetch'
+import { useContext } from 'react'
+import { ThemeContext } from '../../context/ThemeContext'
 
 const Next = () => {
 	const NextUrl =
@@ -16,6 +17,8 @@ const Next = () => {
 
 	const {data: nextData} = useFetch(NextUrl, NextOption)
 
+	const {theme} = useContext(ThemeContext);
+
 	return (
 		<div className={css.wrapper}>
 			{nextData.map((next, index) => (
@@ -26,7 +29,7 @@ const Next = () => {
 				>
 					<div className={css.nVid}>
 						<img src={next.snippet.thumbnails.high.url} alt='video img' />
-						<h3>{next.snippet.title}</h3>
+						<h3 className={theme == 'light' ? css.nVidh : css.lightNVidh}>{next.snippet.title}</h3>
 					</div>
 				</Link>
 			))}

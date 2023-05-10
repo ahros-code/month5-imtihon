@@ -2,7 +2,11 @@
 	border-radius: 14px;
 }
 
-.nVid > h3 {
+.nVidh {
 	color: black;
 	margin-bottom: 35px;
+}
+
+.lightNVidh {
+	color: #fff;
 }

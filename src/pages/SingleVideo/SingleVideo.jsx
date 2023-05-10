@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai';
 import { FiMoreHorizontal } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../Layout/Navbar/Navbar';
 import Next from '../../components/Next/Next';
+import { ThemeContext } from '../../context/ThemeContext';
 import css from './SingleVideo.module.css';
 
 const SingleVideo = () => {
@@ -36,9 +37,7 @@ const SingleVideo = () => {
 
 	let url = `https://www.youtube.com/embed/${id}?autoplay=1`;
 
-	// function update() {
-	// 	window.location.reload();
-	// }
+	const { theme } = useContext(ThemeContext);
 
 	return (
 		<div className={css.container}>
@@ -59,7 +58,11 @@ const SingleVideo = () => {
 					></iframe>
 					{singleVideoData.map((video, index) => (
 						<div className={css.wrapper} key={index}>
-							<h3 className={css.vidTitle}>{video.snippet.title}</h3>
+							<h3
+								className={theme == 'light' ? css.vidTitle : css.lightVidTitle}
+							>
+								{video.snippet.title}
+							</h3>
 							<div className={css.statsWrapper}>
 								<div className={css.views}>
 									<p className={css.vidViews}>
@@ -69,16 +72,22 @@ const SingleVideo = () => {
 								<div className={css.right}>
 									<div className={css.like}>
 										<AiOutlineLike />
-										<span>{video.statistics.likeCount}</span>
+										<span
+											className={
+												theme == 'light' ? css.likeCount : css.lightLikeCount
+											}
+										>
+											{video.statistics.likeCount}
+										</span>
 									</div>
 									<div className={css.disLike}>
 										<AiOutlineDislike />
-										<span>0</span>
+										<span className={theme == 'light' ? css.disLike : css.lightDisLikeCount}>0</span>
 									</div>
 									<div className={css.share}>
-										<span>Share</span>
+										<span className={theme == 'light' ? css.shareT : css.lightShareT}>Share</span>
 									</div>
-									<div className={css.more}>
+									<div className={theme =='light' ? css.more : css.lightMore}>
 										<FiMoreHorizontal />
 									</div>
 								</div>
@@ -105,12 +114,6 @@ const SingleVideo = () => {
 												overflow: showMore ? 'hidden' : '',
 											}}
 										>
-											<button
-												type='button'
-												onClick={e => setShowMore(prev => !prev)}
-											>
-												Show more
-											</button>
 											{video.snippet.description}
 										</p>
 									</div>
