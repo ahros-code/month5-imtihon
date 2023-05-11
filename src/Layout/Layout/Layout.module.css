@@ -19,13 +19,13 @@
 	display: flex;
 	justify-content: space-between;
 	margin-left: 31px;
-	/* height: 100vh; */
+	/* height: 100%; */
 	overflow: hidden;
 }
 
 .wrapper {
 	overflow: hidden;
-	/* height: 100vh; */
+	/* height: 100%; */
 }
 
 @media only screen and (max-width: 1000px) {

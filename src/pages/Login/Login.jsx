@@ -69,7 +69,14 @@ const Login = () => {
 							onChange={e => setPassword(e.target.value)}
 							placeholder='cityslicka'
 						/>
-						<button type='submit' className={css.btn}>
+						<button type='submit' className={css.button} style={{
+							height: '60px',
+							backgroundColor: '#ff0000',
+							border: 'none',
+							fontSize: '18px',
+							color: '#fff',
+							borderRadius: '76px'
+						}}>
 							Log In
 						</button>
 					</form>

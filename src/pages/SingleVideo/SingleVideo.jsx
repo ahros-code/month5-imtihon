@@ -10,7 +10,7 @@ import css from './SingleVideo.module.css';
 const SingleVideo = () => {
 	let { id } = useParams();
 	const [singleVideoData, setSingleVideoData] = useState([]);
-	const [showMore, setShowMore] = useState(false);
+
 	let VideoUrl = `https://youtube-v31.p.rapidapi.com/videos?part=contentDetails%2Csnippet%2Cstatistics&id=${id}`;
 	const VideoOptions = {
 		method: 'GET',
@@ -47,15 +47,17 @@ const SingleVideo = () => {
 
 			<main>
 				<div className={css.leftt}>
-					<iframe
-						width='1000'
-						height='500'
-						src={url}
-						frameborder='0'
-						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-						allowFullScreen
-						className={css.video}
-					></iframe>
+					<div className={css.iframeWrapper}>
+						<iframe
+							width='1000'
+							height='500'
+							src={url}
+							frameBorder={0}
+							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+							allowFullScreen
+							className={css.video}
+						></iframe>
+					</div>
 					{singleVideoData.map((video, index) => (
 						<div className={css.wrapper} key={index}>
 							<h3
@@ -82,12 +84,24 @@ const SingleVideo = () => {
 									</div>
 									<div className={css.disLike}>
 										<AiOutlineDislike />
-										<span className={theme == 'light' ? css.disLike : css.lightDisLikeCount}>0</span>
+										<span
+											className={
+												theme == 'light' ? css.disLike : css.lightDisLikeCount
+											}
+										>
+											0
+										</span>
 									</div>
 									<div className={css.share}>
-										<span className={theme == 'light' ? css.shareT : css.lightShareT}>Share</span>
+										<span
+											className={
+												theme == 'light' ? css.shareT : css.lightShareT
+											}
+										>
+											Share
+										</span>
 									</div>
-									<div className={theme =='light' ? css.more : css.lightMore}>
+									<div className={theme == 'light' ? css.more : css.lightMore}>
 										<FiMoreHorizontal />
 									</div>
 								</div>
@@ -104,24 +118,28 @@ const SingleVideo = () => {
 										/>
 									</div>
 									<div className={css.chRight}>
-										<h4>{video.snippet.channelTitle}</h4>
-										<span className={css.publishedOn}>
-											Published on {video.snippet.publishedAt}
-										</span>
-										<p
-											className={css.desc}
-											style={{
-												overflow: showMore ? 'hidden' : '',
-											}}
-										>
-											{video.snippet.description}
-										</p>
+										<div className={css.forBtnLeft}>
+											<div className={css.sa}>
+												<h4 className={theme == 'light' ? css.channelTtle : css.lightChannelTtle}>{video.snippet.channelTitle}</h4>
+												<span className={css.publishedOn}>
+													Published on {video.snippet.publishedAt}
+												</span>
+											</div>
+											<div className={css.bt}>
+												<div className={css.channelRight}>
+													<button
+														type='button'
+														className={css.subsBtn}
+													>
+														Subscribe
+													</button>
+												</div>
+											</div>
+										</div>
+										<div className={css.forBtnRight}>
+											<p className={theme == 'light' ? css.desc : css.lightDesc}>{video.snippet.description}</p>
+										</div>
 									</div>
-								</div>
-								<div className={css.channelRight}>
-									<button type='button' className={css.subsBtn}>
-										Subscribe
-									</button>
 								</div>
 							</div>
 						</div>

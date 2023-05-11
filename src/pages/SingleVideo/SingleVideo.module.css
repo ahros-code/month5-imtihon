@@ -5,9 +5,14 @@
 	margin: 0 auto;
 }
 
+.iframeWrapper {
+	max-width: 1000px;
+}
+
 .video {
 	margin-top: 30px;
 	border-radius: 14px;
+	width: 100%;
 }
 
 .vidTitle {
@@ -76,7 +81,7 @@
 .share > * {
 	color: #c2c2c2;
 }
-.shareT{
+.shareT {
 	color: #192646;
 	font-size: 15px;
 }
@@ -97,8 +102,33 @@
 	gap: 12px;
 }
 
+.channelTtle {
+	color: #000000;
+}
+
+.lightChannelTtle {
+	color: #c2c2c2;
+}
+
+.lightDesc {
+	color: #c2c2c2;
+	max-width: 820px;
+	margin-top: 14px;
+	margin-bottom: 15px;
+	font-size: 14px;
+	line-height: 22px;
+	mix-blend-mode: normal;
+	opacity: 0.6;
+}
+
+.forBtnLeft {
+	margin-bottom: 20px;
+}
+
 .chRight {
 	max-width: 900px;
+	display: flex;
+	flex-direction: column;
 }
 
 .publishedOn {
@@ -114,7 +144,6 @@
 	color: #000000;
 	mix-blend-mode: normal;
 	opacity: 0.6;
-	max-height: 88px;
 }
 
 .chRight > h4 {
@@ -122,16 +151,16 @@
 }
 
 .subsBtn {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
-	text-align: center;
-	color: #ffffff;
-	background: #ff0000;
-	border-radius: 20px;
-	width: 154px;
-	height: 40px;
-	border: none;
+	font-weight: 400 !important;
+	font-size: 16px !important;
+	line-height: 20px !important;
+	text-align: center !important;
+	color: #ffffff !important;
+	background: #ff0000 !important;
+	border-radius: 20px !important;
+	width: 154px !important;
+	height: 40px !important;
+	border: none !important;
 }
 
 .channelWrapper {
@@ -148,7 +177,7 @@ main {
 .nextLeft {
 	width: 300px;
 	margin-top: 30px;
-	max-height: 100vh;
+	/* max-height: 100vh; */
 	overflow: scroll;
 }
 
@@ -174,4 +203,60 @@ main {
 
 .lightMore {
 	color: #fff;
+}
+
+.forBtnLeft {
+	display: flex;
+	justify-content: space-between;
+}
+
+.iframeWrapper {
+	max-width: 1000px;
+}
+
+@media only screen and (max-width: 1368px) {
+	main {
+		gap: 30px;
+	}
+}
+
+@media only screen and (max-width: 1020px) {
+	main {
+		justify-content: space-between;
+	}
+
+	.video {
+		height: 400px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.video {
+		height: 500px;
+	}
+
+	.chRight {
+		max-width: 100%;
+	}
+
+	.rightt {
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.video {
+		height: 400px;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.video {
+		height: 350px;
+	}
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
+import './main.css';
 import './assets/styles/globals.css';
 import { AuthContextProvider } from './context/AuthContext.jsx';
 import { SearchContextProvider } from './context/SearchContext.jsx';
