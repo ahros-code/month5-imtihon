@@ -35,8 +35,6 @@ const Home = () => {
 
 	const { searchData } = useContext(SearchContext);
 
-	const { theme } = useContext(ThemeContext);
-
 	const myData = data
 		.filter(video => {
 			if (!searchData.trim()) {
@@ -58,8 +56,10 @@ const Home = () => {
 			</SwiperSlide>
 		));
 
+		const { theme } = useContext(ThemeContext);
+
 	return (
-		<div>
+		<div className={theme == 'light' ? css.the : css.lightThe}>
 			<div className={css.channelVideos}>
 				<Swiper
 					slidesPerView={5}
@@ -99,12 +99,12 @@ const Home = () => {
 					spaceBetween={10}
 					className={css.slider}
 					breakpoints={{
-						400: {
+						500: {
 							slidesPerView: 3,
 						},
 						100: {
 							direction: 'vertical',
-							height: 1000
+							height: 850,
 						},
 					}}
 				>

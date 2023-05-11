@@ -45,7 +45,7 @@ const SingleVideo = () => {
 				<Navbar />
 			</nav>
 
-			<main>
+			<main className={theme == 'light' ? css.main : css.lightMain}>
 				<div className={css.leftt}>
 					<div className={css.iframeWrapper}>
 						<iframe

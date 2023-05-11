@@ -18,9 +18,8 @@ import Watchlater from './pages/Watchlater/Watchlater';
 
 const App = () => {
 	const { token } = useContext(AuthContext);
-	const { theme } = useContext(ThemeContext);
 	return (
-		<div className={theme}>
+		
 			<Routes>
 				{!token ? (
 					<Route path='/' element={<Login />} />
@@ -40,7 +39,7 @@ const App = () => {
 				)}
 				<Route path='videos/:id' element={<SingleVideo />} />
 			</Routes>
-		</div>
+		
 	);
 };
 
