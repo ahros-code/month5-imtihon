@@ -60,7 +60,7 @@ const SingleVideo = () => {
 							></iframe>
 						</div>
 						{singleVideoData.map((video, index) => (
-							<div className={theme =='light' ? css.wrapper : css.lightWrapper} key={index}>
+							<div className={css.wrapper} key={index}>
 								<h3
 									className={
 										theme == 'light' ? css.vidTitle : css.lightVidTitle

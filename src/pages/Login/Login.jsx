@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react';
-import logo from '../../assets/images/Black.svg';
-import logoLight from '../../assets/images/Light.svg';
-import { AuthContext } from '../../context/AuthContext';
-import { ThemeContext } from '../../context/ThemeContext';
-import css from './Login.module.css';
+import { useContext, useState } from 'react'
+import logo from '../../assets/images/Black.svg'
+import logoLight from '../../assets/images/Light.svg'
+import { AuthContext } from '../../context/AuthContext'
+import { ThemeContext } from '../../context/ThemeContext'
+import css from './Login.module.css'
 
 const Login = () => {
 	const [email, setEmail] = useState('');
@@ -44,6 +44,7 @@ const Login = () => {
 	const { theme } = useContext(ThemeContext);
 
 	return (
+		<div className={theme == 'light' ? css.wrap : css.lightWrap}>
 		<div className={theme =='light' ? css.mainWrapper : css.lightMainWrapper}>
 			<div className={css.wrapper}>
 				<div className={css.container}>
@@ -82,6 +83,7 @@ const Login = () => {
 					</form>
 				</div>
 			</div>
+		</div>
 		</div>
 	);
 };

@@ -23,11 +23,12 @@
 }
 
 .lightWrapper {
-	background-color: #17171E;
+	background-color: #17171e;
+	height: 100vh;
 }
 
 @media only screen and (max-width: 1000px) {
 	.left {
-		display: none;
+		display: none;	
 	}
 }
