@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import search from '../../../../assets/images/search.svg';
+import lightSearch from '../../../../assets/images/Light/Shape.svg'
 import { SearchContext } from '../../../../context/SearchContext';
 import css from './Search.module.css';
-import searchLight from '../../../../assets/images/Light/Shape.svg';
 import { ThemeContext } from '../../../../context/ThemeContext'
 
 const Search = () => {
@@ -27,7 +27,7 @@ const Search = () => {
 					</form>
 				</div>
 				<div className={css.icon}>
-					<img src={theme == "light" ? search : searchLight} alt='search-icon' />
+					<img src={theme == "light" ? search : lightSearch} alt='search-icon' />
 				</div>
 			</div>
 		</>

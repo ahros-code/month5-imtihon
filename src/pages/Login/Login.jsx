@@ -44,7 +44,7 @@ const Login = () => {
 	const { theme } = useContext(ThemeContext);
 
 	return (
-		<div className={css.mainWrapper}>
+		<div className={theme =='light' ? css.mainWrapper : css.lightMainWrapper}>
 			<div className={css.wrapper}>
 				<div className={css.container}>
 					<img

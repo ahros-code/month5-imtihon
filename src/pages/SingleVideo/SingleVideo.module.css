@@ -174,6 +174,11 @@
 	justify-content: space-between;
 }
 
+.lightMain {
+	display: flex;
+	justify-content: space-between;
+}
+
 .nextLeft {
 	width: 300px;
 	margin-top: 30px;
@@ -222,14 +227,35 @@
 	background-color: red;
 } */
 
+.rightt {
+	overflow-y: auto;
+	max-height: 1000px;
+}
+
+.rightt::-webkit-scrollbar {
+	display: none;
+}
+
+.lightContainerWrapper {
+	background-color: #17171e;
+}
+
 @media only screen and (max-width: 1368px) {
 	.main {
+		gap: 30px;
+	}
+
+	.lightMain {
 		gap: 30px;
 	}
 }
 
 @media only screen and (max-width: 1020px) {
 	.main {
+		justify-content: space-between;
+	}
+
+	.lightMain {
 		justify-content: space-between;
 	}
 
@@ -240,6 +266,11 @@
 
 @media only screen and (max-width: 900px) {
 	.main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.lightMain {
 		display: flex;
 		flex-direction: column;
 	}
@@ -271,6 +302,10 @@
 		font-size: 20px;
 	}
 
+	.lightVidTitle {
+		font-size: 20px;
+	}
+
 	.subsBtn {
 		width: 130px !important;
 		height: 35px !important;
@@ -285,6 +320,12 @@
 
 @media only screen and (max-width: 467px) {
 	.vidTitle {
+		margin-top: 10px;
+		font-size: 18px;
+		line-height: 30px;
+	}
+
+	.lightVidTitle {
 		margin-top: 10px;
 		font-size: 18px;
 		line-height: 30px;
@@ -316,6 +357,16 @@
 		width: 0 !important;
 		height: 0 !important;
 		margin-right: 25px !important;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.lightContainerWrapper {
+		background-color: #fff;
+	}
+
+	.lightWrapper {
+		background-color: #17171e;
 	}
 }
 

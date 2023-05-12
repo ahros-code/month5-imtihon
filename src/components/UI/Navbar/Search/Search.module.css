@@ -39,10 +39,7 @@
 .input::placeholder {
 	font-size: 16px;
 	line-height: 20px;
-	/* identical to box height */
-
 	color: #30384c;
-
 	mix-blend-mode: normal;
 	opacity: 0.4;
 }
@@ -70,10 +67,18 @@
 	.input {
 		padding-right: 500px;
 	}
+
+	.lightInput{
+		padding-right: 500px;
+	}
 }
 
 @media only screen and (max-width: 898px) {
 	.input {
+		margin-left: 10px;
+	}
+
+	.lightInput {
 		margin-left: 10px;
 	}
 }
@@ -83,16 +88,27 @@
 		padding-right: 300px;
 		margin-left: 0;
 	}
+	.lightInput {
+		padding-right: 300px;
+		margin-left: 0;
+	}
 }
 
 @media only screen and (max-width: 732px) {
 	.input {
 		padding-right: 250px;
 	}
+	.lightInput {
+		padding-right: 250px;
+	}
 }
 
 @media only screen and (max-width: 662px) {
 	.input {
+		display: none;
+	}
+
+	.lightInput {
 		display: none;
 	}
 
